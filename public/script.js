@@ -1,4 +1,4 @@
-const socket = io()                 //  we are no on the client and we are using the io package here client side
+const socket = io()                 //  we are not on the client and we are using the io package here client side
 
 //  get some references to the divs and input field on the page
 const chat       = document.querySelector('.chat-form')     
@@ -10,7 +10,7 @@ chat.addEventListener('submit', event => {          //  when the submit button i
     //  What does emit do? 
     //      Synchronously calls each of the listeners registered for the event named 'chat', 
     //      passing the supplied arguments to each.
-    socket.emit('chat', input.value);               //  the suppied argument is the text in the input field typed by you
+    socket.emit('chat', input.value);               //  the supplied argument is the text in the input field typed by you
     input.value = '';                               //  clear the chat text
 });
 
