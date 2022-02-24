@@ -16,5 +16,7 @@ chat.addEventListener('submit', event => {          //  when the submit button i
 
 socket.on('chat', message => {                      //  adding an event handler to our socket, listening for any event destined for the named socket 'chat'
     console.log('From server: ', message);
+    if (Array.isArray(message))                     //  if this is an array of quotes 
+        chatWindow.innerHTML = '';                  //  clear the message window, they can be long
     chatWindow.innerHTML += message + '<br>';       //  take the socket data packet and add it to the chat window
 });

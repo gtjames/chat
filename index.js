@@ -2,6 +2,8 @@
 //  a pretty good but circuitous route to get to this point
 //  read the article but reference this code
 
+const casblanca = require('./casablanca.json');     //  everyones favorite package
+
 const express = require('express');     //  everyones favorite package
 const app = express()                   //  make this code an express router
 const server = require('http').createServer(app)
@@ -27,3 +29,12 @@ io.on('connection', socket => {             //  io is our socket handler. When t
         io.emit('chat', message);           //  when we get an event on that socket broadcast that message to all 
     });
 });
+
+function showQuote() {                      //  timer method that kicks off regularly
+  let rand = Math.floor(Math.random() * casblanca.quotes.length)
+  let message = casblanca.quotes[rand].quote;   //  find a random quote
+  io.emit('chat', message);                 //  send the quote to all listeners
+}  
+
+ //define time interval and call user-defined waitAndshow function  
+ setInterval(showQuote, 4000);
