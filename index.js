@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000   //  setting up a server on port 3000
 const io = require('socket.io')(server) //  create the socket handler and tell it who our server is
 const path = require('path')            //  path package knows about the server environment the code is running on
 
-//    the use method is how a URL path is asociated with a JS file to handle browsesr requests 
+//    the use method is how a URL path is asociated with a JS file to handle browser requests 
 //    use has two params (usually) param one is the path for the URL and param 2 is the router to be called
 //    here we have a single param. the param is a reference to the folder where our router will be found
 app.use(express.static(path.join('./public')))
