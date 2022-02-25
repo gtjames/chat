@@ -37,4 +37,4 @@ function showQuote() {                      //  timer method that kicks off regu
 }  
 
  //define time interval and call user-defined waitAndshow function  
- setInterval(showQuote, 4000);
+//  setInterval(showQuote, 4000);
