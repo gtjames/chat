@@ -1,5 +1,6 @@
 const socket = io()                 //  we are not on the client and we are using the io package here client side
 
+//      attention remember to run the web page using                 http://localhost:3000/
 //  get some references to the divs and input field on the page
 const chat       = document.querySelector('.chat-form')     
 const input      = document.querySelector('.chat-input')
